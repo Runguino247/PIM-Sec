@@ -1,0 +1,27 @@
+# Framework API y servidor ASGI
+fastapi[standard]==0.152.0
+
+# Validación y configuración
+pydantic>=2.9,<3.0
+pydantic-settings>=2.6,<3.0
+email-validator>=2.2,<3.0
+
+# Base de datos PostgreSQL
+SQLAlchemy>=2.0,<2.1
+psycopg[binary]>=3.2,<4.0
+alembic>=1.14,<2.0
+
+# Autenticación, JWT y contraseñas
+PyJWT>=2.10,<3.0
+pwdlib[argon2]>=0.2,<1.0
+python-multipart>=0.0.20,<1.0
+
+# Monitoreo y tareas programadas
+APScheduler>=3.11,<4.0
+
+# Variables de entorno y utilidades
+python-dotenv>=1.0,<2.0
+
+# Pruebas automatizadas
+pytest>=8.3,<10.0
+httpx>=0.27,<1.0

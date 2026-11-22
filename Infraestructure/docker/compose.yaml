@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:latest
+    container_name: pimsec-postgres
+    environment:
+      POSTGRES_DB: pimsec_db
+      POSTGRES_USER: pimsec
+      POSTGRES_PASSWORD: pimsec
+    ports:
+      - "127.0.0.1:5434:5432"
+    volumes:
+      - pimsec_pgdata:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    restart: unless-stopped
+
+volumes:
+  pimsec_pgdata:
