@@ -13,22 +13,22 @@ def create_admin():
             return
 
         # Verificar si ya existe
-        if db.query(User).filter(User.username == "admin").first():
+        if db.query(User).filter(User.username == "admin2").first():
             print("El usuario 'admin' ya existe.")
             return
 
         # Crear usuario
         admin_user = User(
             role_id=admin_role.id,
-            username="admin",
-            email="oscarreyesbarja@gmail.com",
+            username="admin2",
+            email="yocarreyesbarja@gmail.com",
             password_hash=get_password_hash("admin123"),
             is_active=True,
             must_change_password=True
         )
         db.add(admin_user)
         db.commit()
-        print("✅ Usuario 'admin' creado exitosamente. Contraseña: admin123")
+        print("✅ Usuario 'admin2' creado exitosamente. Contraseña: admin123")
     finally:
         db.close()
 
